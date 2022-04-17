@@ -1,0 +1,2 @@
+# EndSwitch-
+include &lt;Misc.au3>  $hDll = DllOpen("user32.dll") $shift = 0  While 1    Switch _IsPressed('10', $hDll) ;Checks if Shift key pressed       Case 1          If $shift = 0 Then ConsoleWrite("Key pressed" &amp; @LF)          $shift = 1       Case 0          If $shift = 1 Then ConsoleWrite("Key released" &amp; @LF)          $shift = 0    EndSwitch    If _IsPressed('1B', $hDll) Then ExitLoop ;Exits if Esc key pressed WEnd DllClose($hDll)
